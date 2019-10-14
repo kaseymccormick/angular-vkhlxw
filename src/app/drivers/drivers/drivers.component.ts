@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { DriverSingleComponent } from "../../";
+import { DriverSingleComponent } from "../driver-single/driver-single.component";
 interface IDriver {
   first_name: string;
   last_name: string;
