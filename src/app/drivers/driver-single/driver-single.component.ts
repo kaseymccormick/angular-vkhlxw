@@ -41,4 +41,7 @@ export class DriverSingleComponent implements OnInit {
   driverSave(){
     this.driverFormData = this.driverForm.value;
   }
+  getFormdata(){
+    return this.driverForm.value
+  }
 }

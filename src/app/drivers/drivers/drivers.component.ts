@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { DriverSingleComponent } from "../driver-single/driver-single.component";
+
 interface IDriver {
   first_name: string;
   last_name: string;
@@ -12,8 +13,7 @@ interface IDriver {
   styleUrls: ["./drivers.component.css"]
 })
 export class DriversComponent implements OnInit {
-  @ViewChild(DriverSingleComponent, { static: true }) driverChild: DriverSingleComponent
-  // @ViewChild(DriverSingleComponent) driverComponent: DriverSingleComponent;
+  @ViewChild(DriverSingleComponent, { static: false}) driverChild: DriverSingleComponent
   drivers: any;
   addDlNumber: string = null;
   addDlState: string;
@@ -51,5 +51,8 @@ export class DriversComponent implements OnInit {
     const driverIndex = this.drivers.indexOf(driver);
   }
 
-  saveAllDrivers() {}
+  saveAllDrivers() {
+  const driver = this.driverChild.getFormdata()
+  console.log('driver returned', driver)
+  }
 }
