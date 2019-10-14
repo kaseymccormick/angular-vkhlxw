@@ -12,7 +12,7 @@ interface IDriver {
   styleUrls: ["./drivers.component.css"]
 })
 export class DriversComponent implements OnInit {
-  @ViewChild(DriverSingleComponent) driverChild: DriverSingleComponent
+  @ViewChild(DriverSingleComponent, { static: true }) driverChild: DriverSingleComponent
   // @ViewChild(DriverSingleComponent) driverComponent: DriverSingleComponent;
   drivers: any;
   addDlNumber: string = null;
