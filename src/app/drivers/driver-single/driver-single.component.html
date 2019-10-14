@@ -1,0 +1,58 @@
+<div id={{index}} class="row driver">
+
+	<div class="col-lg-12 driver__body">
+		<form #f="ngForm" [formGroup]="driverForm" (ngSubmit)="driverSave()">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row">
+						<div class="col-lg-2">
+							<div class="form-group">
+								<label for="dlState">Drivers Licence State</label>
+								<input type="text" name="dlstate" id="dlstate" aria-describedby="dlstate"
+                  formControlName="dl_state">
+              </div>
+							</div>
+							<div class="col-lg-2">
+								<div class="form-group">
+									<label for="dlnumber">Drivers Licence Number</label>
+									<input type="text" name="dlnumber" id="dlnumber" aria-describedby="dlnumber"
+                  formControlName="dl_number">
+              </div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="row">
+										<div class="col-lg-4 mar-top-5">
+											<div class="form-group">
+												<label for="firstName">Driver First Name <sup class="required">*</sup></label>
+												<input type="text" formControlName="first_name" class="form-control" (keyup)="isDriverComplete()">
+                  </div>
+											</div>
+											<div class="col-lg-4 mar-top-5">
+												<div class="form-group">
+													<label for="lastName">Driver Last Name <sup class="required">*</sup></label>
+													<input type="text" formControlName="last_name" class="form-control" (keyup)="isDriverComplete()">
+                  </div>
+												</div>
+
+
+											</div>
+										</div>
+
+										<div class="col-lg-10">
+											<small class="help-text"><sup class="required">*</sup>Indicates Required field</small>
+										</div>
+										<div class="col-lg-2">
+											<button class="float-right" type="submit"  >Save Driver</button>
+										</div>
+									</div>
+								</div>
+							</div>
+		</form>
+	</div>
+   <div>
+                  <pre [innerHTML]="driverFormData | json"></pre>
+
+  </div>
+</div>
